@@ -18,7 +18,7 @@ from collections import Counter
 from datetime import datetime  
 
 client = commands.Bot(command_prefix='a.')
-status = cycle(['Do a.help for info ', ' Library: Discord.py Rewrite ', 'V.0.6 | Updates coming'])
+status = cycle(['Do a.help for info ', 'Use a.bugreport to report bugs! ', 'Use a.suggest to suggest ideas!', 'V.0.6 | Updates coming'])
 gif = ('https://media.giphy.com/media/xTiN0L7EW5trfOvEk0/giphy.gif')
 client.remove_command('help')
 
