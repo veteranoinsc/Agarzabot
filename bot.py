@@ -111,7 +111,7 @@ async def esay(ctx, title, *, body):
     colour=discord.Colour.blue(),
         title=f' {title }')
   
-  embed.add_field(name=f'...................', value=f'{body}' ,inline=False)
+  embed.add_field(name=f'x', value=f'{body}' ,inline=False)
   await ctx.send(embed=embed)
 @esay.error
 async def esay_error(ctx, error):
@@ -223,8 +223,8 @@ async def serverinfo(ctx, member: discord.Member = None):
     embed.add_field(name=">>> <:tick:651543094336159787>   x  Boosting Level:", value=guild.premium_tier , inline=False)
     embed.add_field(name=">>> <:error:657997451042750485>   x  Region:", value=guild.region , inline=False)
     embed.add_field(name=">>> <:Verifed:711681731215753228>   x  Verification:", value=guild.verification_level, inline=False)
-    embed.add_field(name=">>> <joecap:716395735448289280>   x  Roles:", value=roles, inline=False)
-    embed.add_field(name=">>> <onlines:715931980742656153>   x  Channels:", value=channels, inline=False)
+    embed.add_field(name=">>> <:joecap:716395735448289280>   x  Roles:", value=roles, inline=False)
+    embed.add_field(name=">>> <:onlines:715931980742656153>   x  Channels:", value=channels, inline=False)
     embed.add_field(name=">>> <:bot:634854279294877706>   x  Emojis:", value=emojis, inline=False)
 
     await ctx.send(embed=embed)
