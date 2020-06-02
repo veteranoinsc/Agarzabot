@@ -47,7 +47,7 @@ async def say(ctx, *,words):
 @say.error
 async def say_error(ctx, error):
   if isinstance(error, commands.MissingRequiredArgument):
-    await ctx.send(" <a:emoji2:715925933844070402> x  Please specify a message to say")  
+    await ctx.send("<:error:657997451042750485> x  Please specify a message to say")  
 @client.command()
 async def dm(ctx, member : discord.Member, *, message):
     author = ctx.message.author.name
@@ -62,7 +62,7 @@ async def dm(ctx, member : discord.Member, *, message):
 @dm.error
 async def dm_error(ctx, error):
   if isinstance(error, commands.MissingRequiredArgument):
-    await ctx.send(" <a:emoji2:715925933844070402> x  Please specify a user to dm")  
+    await ctx.send(" <:error:657997451042750485> x  Please specify a user to dm")  
 @client.command()
 async def cookie(ctx, member: discord.User=None):
      embed5 = discord.Embed(
@@ -84,7 +84,8 @@ async def gay(ctx, *, gaything):
 @gay.error
 async def gay_error(ctx, error):
   if isinstance(error, commands.MissingRequiredArgument):
-    await ctx.send(" <a:emoji2:715925933844070402> x  Please specify the user")
+    await ctx.send(" <:error:657997451042750485> x Specify a user")
+
 @client.command(name='8ball')
 async def _ball(ctx, *, question):
     responses = [
@@ -103,8 +104,19 @@ async def _ball(ctx, *, question):
 @_ball.error
 async def _ball_error(ctx, error):
   if isinstance(error, commands.MissingRequiredArgument):
-    await ctx.send("<a:emoji2:715925933844070402> x  Please specify the question.")
-    
+    await ctx.send("<:error:657997451042750485> x  Please specify the question.")
+@client.command()
+async def esay(ctx, title, *, body):
+  embed = discord.Embed(
+    colour=discord.Colour.blue(),
+        title=f' {title }')
+  
+  embed.add_field(name=f'...................', value=f'{body}' ,inline=False)
+  await ctx.send(embed=embed)
+@esay.error
+async def esay_error(ctx, error):
+  if isinstance(error, commands.MissingRequiredArgument):
+    await ctx.send("<:error:657997451042750485>  x  `Example:` a.esay **title - body** ")
 #info-commands
 
 
@@ -162,9 +174,9 @@ async def infobot(ctx):
     embed.add_field(name='<:bot:634854279294877706> x  Name', value= f'>>> AgarzaBot#8543',inline=True)
     embed.add_field(name=':id: x  My ID', value= f'>>> 630337223837089824',inline=True)
     embed.add_field(name='<:bot:634854279294877706> x  Guilds', value= f'>>> {(len(client.guilds))}',inline=True)
-    embed.add_field(name='<a:emoji1:715925913640108122> x  Users', value= f'>>> {(len(client.users))}',inline=True)
+    embed.add_field(name='<:onlines:715931980742656153> x  Users', value= f'>>> {(len(client.users))}',inline=False)
     embed.add_field(name=':frame_photo: x  Avatar', value= f'>>> [Avatar Link](https://cdn.discordapp.com/avatars/630337223837089824/3e420640a040b9853d2f44f427512d33.webp?size=1024)',inline=True)
-    embed.add_field(name=':blue_book: x  Library', value= f'>>> [Discord.py](https://discordpy.readthedocs.io/)',inline=True)
+    embed.add_field(name=':blue_book: x  Library', value= f'>>> [Discord.py](https://discordpy.readthedocs.io/)',inline=False)
 
     await ctx.send(embed=embed)
 
@@ -180,7 +192,7 @@ async def av(ctx, member: discord.User=None):
 @av.error
 async def av_error(ctx, error):
   if isinstance(error, commands.MissingRequiredArgument):
-    await ctx.send(" <a:emoji2:715925933844070402> x  Please specify the user")
+    await ctx.send(" <:error:657997451042750485> x  Please specify the user")
 @client.command(aliases=["serverinfo, server_info"])
 async def serverinfo(ctx, member: discord.Member = None):
     member = ctx.author if not member else member
@@ -211,9 +223,9 @@ async def serverinfo(ctx, member: discord.Member = None):
     embed.add_field(name=">>> <:tick:651543094336159787>   x  Boosting Level:", value=guild.premium_tier , inline=False)
     embed.add_field(name=">>> <:error:657997451042750485>   x  Region:", value=guild.region , inline=False)
     embed.add_field(name=">>> <:Verifed:711681731215753228>   x  Verification:", value=guild.verification_level, inline=False)
-    embed.add_field(name=">>> <a:emoji1:715925913640108122>   x  Roles:", value=roles, inline=False)
-    embed.add_field(name=">>> <a:party:715925890957049989>   x  Channels:", value=channels, inline=False)
-    embed.add_field(name=">>> <a:emoji2:715925933844070402>   x  Emojis:", value=emojis, inline=False)
+    embed.add_field(name=">>> <joecap:716395735448289280>   x  Roles:", value=roles, inline=False)
+    embed.add_field(name=">>> <onlines:715931980742656153>   x  Channels:", value=channels, inline=False)
+    embed.add_field(name=">>> <:bot:634854279294877706>   x  Emojis:", value=emojis, inline=False)
 
     await ctx.send(embed=embed)
 @client.command()
@@ -223,7 +235,7 @@ async def ping(ctx):
         title='Ping command!!')
 
         embed.set_footer(text=f'Request by {ctx.author} | Online   ' ,icon_url=ctx.author.avatar_url)
-        embed.add_field(name='<a:announcement:715970361983893564> x Ping', value= f"```Pong! {round(client.latency * 1000)}ms```",inline=False)
+        embed.add_field(name='<:bot:634854279294877706> x Ping', value= f"```Pong! {round(client.latency * 1000)}ms```",inline=False)
 
         await ctx.send(embed=embed)
         
@@ -247,7 +259,7 @@ async def suggest(ctx, *, arg):
 @suggest.error
 async def suggest_error(ctx, error):
   if isinstance(error, commands.MissingRequiredArgument):
-    await ctx.send(" <a:emoji2:715925933844070402> x  Please specify something to suggest!")  
+    await ctx.send(" <:error:657997451042750485> x  Please specify something to suggest!")  
 @client.command()
 async def bugreport(ctx, *, arg):
     channel = client.get_channel(715951274415357952)
@@ -265,8 +277,8 @@ async def bugreport(ctx, *, arg):
 @bugreport.error
 async def bugreport_error(ctx, error):
   if isinstance(error, commands.MissingRequiredArgument):
-    await ctx.send(" <a:emoji2:715925933844070402> x  Please specify a bug to report")  
-@client.command()
+    await ctx.send("<:error:657997451042750485> x  Please specify a bug to report")  
+@client.command(aliases=['inv', 'i'])
 async def invite(ctx):
     embed = discord.Embed(
         colour=discord.Colour.blue(),
@@ -290,7 +302,7 @@ async def kick (ctx, member: discord.Member, *, reason=None):
 @kick.error
 async def kick_error(ctx, error):
   if isinstance(error, commands.MissingRequiredArgument):
-    await ctx.send(" <a:emoji2:715925933844070402> x  Please specify a user to kick")  
+    await ctx.send(" <:error:657997451042750485> x  Please specify a user to kick")  
 @client.command()
 @commands.has_permissions(ban_members=True)
 async def ban (ctx, member: discord.Member, *, reason=None):
@@ -304,7 +316,7 @@ async def ban (ctx, member: discord.Member, *, reason=None):
 @ban.error
 async def ban_error(ctx, error):
   if isinstance(error, commands.MissingRequiredArgument):
-    await ctx.send(" <a:emoji2:715925933844070402> x  Please specify a user to ban")  
+    await ctx.send(" <:error:657997451042750485>  x  Please specify a user to ban")  
 
 
 @client.command()
@@ -317,7 +329,7 @@ async def announce(ctx, channel: TextChannel, *, message):
 @announce.error
 async def announce_error(ctx, error):
   if isinstance(error, commands.MissingRequiredArgument):
-    await ctx.send(" <a:emoji2:715925933844070402> x  Please specify the channel and message")
+    await ctx.send(" <:error:657997451042750485> x  Please specify the channel and message")
 @client.event
 async def on_message_delete(message):
     global lastdel
@@ -341,7 +353,7 @@ async def snipe(ctx):
 @snipe.error
 async def snipe_error(ctx, error):
   if isinstance(error, commands.MissingRequiredArgument):
-    await ctx.send(" <a:emoji2:715925933844070402> x  Please specify the user")
+    await ctx.send(" <:error:657997451042750485> x  Please specify the user")
 @client.command()
 @commands.has_permissions(kick_members=True)
 async def warn(ctx, member:discord.Member, *, arg):
@@ -350,13 +362,13 @@ async def warn(ctx, member:discord.Member, *, arg):
     channel = get(guild.text_channels, name='warn-logs')
     if channel is None:
         channel = await guild.create_text_channel('warn-logs')
-    await channel.send(f'>>> {member.mention} **got warned by the reason**: {arg} || **Warned by:** {author.mention}')
+    await channel.send(f'>>> {member.mention} **got warned by the reason**: {arg} x  **Warned by:** {author.mention}')
     await member.send(f'>>> You got warned for:** {arg}')
     await ctx.message.delete()
 @warn.error
 async def warn_error(ctx, error):
   if isinstance(error, commands.MissingRequiredArgument):
-    await ctx.send("<a:emoji2:715925933844070402> x  Please specify the user and reason!")    
+    await ctx.send("<:error:657997451042750485> x  Please specify the user and reason!")    
 @client.command()
 @commands.has_permissions(manage_messages=True)
 
@@ -368,7 +380,7 @@ async def clear(ctx, amount : int):
 @clear.error
 async def clear_error(ctx, error):
   if isinstance(error, commands.MissingRequiredArgument):
-    await ctx.send("<a:emoji2:715925933844070402> x  Please specify the amount of messages to delete")
+    await ctx.send("<:error:657997451042750485> x  Please specify the amount of messages to delete")
 
 
 #help-cmd-commands
@@ -381,7 +393,7 @@ async def cmds(ctx):
 
     embed.set_footer(text=f'Request by {ctx.author}| Online   ' ,icon_url=ctx.author.avatar_url)
     embed.add_field(name='>>> :rotating_light:  x  Prefix', value='`a.`',inline=False)
-    embed.add_field(name=' >>> :wrestlers:  x  Fun  ', value=' ```say, 8ball, dm, gay, cookie, password```',inline=False)
+    embed.add_field(name=' >>> :wrestlers:  x  Fun  ', value=' ```say, 8ball, dm, gay, cookie, password, esay```',inline=False)
     embed.add_field(name='>>> :police_car:  x  Moderation', value=' ```clear, warn, ban, kick, snipe```',inline=False)
     embed.add_field(name='>>> <:error:657997451042750485>  x  Information', value=' ```userinfo, serverinfo, botservers, ping, avatar, botinfo, announce```',inline=False)
     embed.add_field(name='>>> :bust_in_silhouette:  x  Bot Support', value=' ```suggest, bugreport, invite```',inline=False)
@@ -399,9 +411,9 @@ async def help(ctx):
         title='Help')
     embed.set_footer(text=f"Requested By {ctx.author}  | Help", icon_url=ctx.author.avatar_url)
     embed.add_field(name='<:error:657997451042750485> | Prefix', value='`a.`',inline=False)
-    embed.add_field(name=' <a:devs:715947660732924017> | Developer  ', value=' `PoundsCoin#9999`',inline=False)
-    embed.add_field(name=' <a:emoji1:715925913640108122>   | Commands', value=' >>> Do a.cmds to see the commands',inline=False)
-    embed.add_field(name='<a:party:715925890957049989> | Add-ons', value=' >>> [Support](https://discord.gg/u4Hr7YV) ',inline=False)
+    embed.add_field(name=' :gear: | Developer  ', value=' `PoundsCoin#9999`',inline=False)
+    embed.add_field(name=' <:onlines:715931980742656153>   | Commands', value=' >>> Do a.cmds to see the commands',inline=False)
+    embed.add_field(name='<:joecap:716395735448289280> | Add-ons', value=' >>> [Support](https://discord.gg/u4Hr7YV) ',inline=False)
     await ctx.send(embed=embed)
     
 #config-commands
@@ -418,7 +430,7 @@ async def delrole(ctx, role: discord.Role):
 @delrole.error
 async def delrole_error(ctx, error):
   if isinstance(error, commands.MissingRequiredArgument):
-    await ctx.send(" <a:emoji2:715925933844070402> x  Please specify a role to delete")  
+    await ctx.send(" <:error:657997451042750485> x  Please specify a role to delete")  
 
 @client.command()
 @has_permissions(manage_channels=True)
@@ -433,7 +445,7 @@ async def newcategory(ctx, *, name):
 @newcategory.error
 async def newcategory_error(ctx, error):
   if isinstance(error, commands.MissingRequiredArgument):
-    await ctx.send(" <a:emoji2:715925933844070402> x  Please specify a category to create")  
+    await ctx.send(" <:error:657997451042750485> x  Please specify a category to create")  
 @client.command()
 @has_permissions(manage_channels=True)
 async def newchannel(ctx, *, name):
@@ -447,7 +459,7 @@ async def newchannel(ctx, *, name):
 @newchannel.error
 async def newchannel_error(ctx, error):
   if isinstance(error, commands.MissingRequiredArgument):
-    await ctx.send(" <a:emoji2:715925933844070402> x  Please specify a channel to create")  
+    await ctx.send(" <:error:657997451042750485> x  Please specify a channel to create")  
 @client.command()
 @has_permissions(manage_channels=True)
 async def newvoicechannel(ctx, *, name):
@@ -461,7 +473,7 @@ async def newvoicechannel(ctx, *, name):
 @newvoicechannel.error
 async def newvoicechannel_error(ctx, error):
   if isinstance(error, commands.MissingRequiredArgument):
-    await ctx.send(" <a:emoji2:715925933844070402> x  Please specify a voice channel to create")  
+    await ctx.send(" <:error:657997451042750485> x  Please specify a voice channel to create")  
 #Events
 
 @client.event
@@ -471,7 +483,7 @@ async def on_ready():
 @client.event
 async def on_command_error(ctx, error):
     if isinstance(error, commands.MissingPermissions):
-     await ctx.send(f"<a:emoji2:715925933844070402> | Error, You don't have enough permissions to use this command!")
+     await ctx.send(f"<:error:657997451042750485> | Error, You don't have enough permissions to use this command!")
 
 @client.event
 async def on_member_join(member):
