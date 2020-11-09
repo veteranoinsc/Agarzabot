@@ -495,5 +495,3 @@ async def on_member_remove(member):
 @tasks.loop(seconds= 7)
 async def change_status():
     await client.change_presence(activity=discord.Game(next(status)))
-
-
