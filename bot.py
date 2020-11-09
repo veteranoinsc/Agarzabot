@@ -244,7 +244,7 @@ async def ping(ctx):
 @client.command()
 async def suggest(ctx, *, arg):
 
-    channel = client.get_channel(715951246833352765)
+    channel = client.get_channel(CHANNELID)
     author = ctx.message.author.name
     icon = ctx.message.author.avatar_url
 
@@ -262,7 +262,7 @@ async def suggest_error(ctx, error):
     await ctx.send(" <:error:657997451042750485> x  Please specify something to suggest!")  
 @client.command()
 async def bugreport(ctx, *, arg):
-    channel = client.get_channel(715951274415357952)
+    channel = client.get_channel(CHANNELID)
     author = ctx.message.author.name
     icon = ctx.message.author.avatar_url
 
