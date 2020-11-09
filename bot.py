@@ -496,4 +496,4 @@ async def on_member_remove(member):
 async def change_status():
     await client.change_presence(activity=discord.Game(next(status)))
 
-client.run('NjMwMzM3MjIzODM3MDg5ODI0.Xs5DFw.Clptewsy6YJl7VYr9faDq7PfL18')    
+
