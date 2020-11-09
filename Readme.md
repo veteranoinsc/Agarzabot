@@ -18,8 +18,10 @@ py -3 -m pip install -U discord.py
 ```
 
 
-
+## Social Medias
 
 - [Twitter](https://twitter.com/adrian_bhx)
 
 - [Steam](https://steamcommunity.com/id/ccsslover)
+
+- [Discord](https://discord.bio/p/poundscoin)
