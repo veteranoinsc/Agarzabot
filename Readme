@@ -1,6 +1,15 @@
 You're free to use all code made for this bot.
 
 
-It's for python rewrite.  
-Recommend: Py 3.6 - 3.7
+Recommend: Py 3.6 - 3.7 (Rewrite version)
 Host: Heroku/Glitch
+
+
+Put this in your console for installing py rewrite
+# Linux/macOS
+python3 -m pip install -U discord.py
+
+# Windows
+py -3 -m pip install -U discord.py
+
+x-Voice support is not added with that installation-x
