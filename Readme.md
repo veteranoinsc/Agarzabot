@@ -1,4 +1,6 @@
-You're free to use all code made for this bot.
+═════════════════════ஜ۩۞۩ஜ════════════════════
+W E L C O M E - T O - M Y - AGARZABOT - INFORMATION
+═════════════════════ஜ۩۞۩ஜ═════════════════════
 
 ## Recommendations about the bot
 ```
@@ -18,7 +20,7 @@ py -3 -m pip install -U discord.py
 ```
 
 
-## Social Medias
+## My Social Media
 
 - [Twitter](https://twitter.com/adrian_bhx)
 
