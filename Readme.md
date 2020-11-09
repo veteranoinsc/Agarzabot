@@ -1,10 +1,10 @@
 ═════════════════════ஜ۩۞۩ஜ════════════════════
 
-    W E L C O M E - T O - M Y - AGARZABOT - INFORMATION
+ W E L C O M E - T O - M Y - AGARZABOT - INFORMATION
 
 ═════════════════════ஜ۩۞۩ஜ═════════════════════
 
-## Recommendations about the bot
+## Recommendations about the bot.
 ```
 - Recommend: Py 3.6 - 3.7 (Rewrite version)
 
