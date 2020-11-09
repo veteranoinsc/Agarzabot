@@ -1,8 +1,11 @@
 You're free to use all code made for this bot.
 
+## Recommendations about the bot
+```
+- Recommend: Py 3.6 - 3.7 (Rewrite version)
 
-Recommend: Py 3.6 - 3.7 (Rewrite version)
-Host: Heroku/Glitch
+- Host: Heroku/Glitch 
+```
 
 ## How to install py rewrite 
 ``` 
